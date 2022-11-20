@@ -15,7 +15,6 @@ export function Seed(){
     axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${process.env.NASA_API_KEY}`)
     .then(resp => {
         const nasa_data = resp.data
-        console.log(nasa_data);
         nasa_data.photos.map((rover: any) => {
             PayLoad.id = rover.id;
             PayLoad.cameraName = rover.camera.name;
