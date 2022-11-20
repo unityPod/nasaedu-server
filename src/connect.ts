@@ -1,4 +1,7 @@
-let uri = "mongodb+srv://unitypod:94ngQAY9dgW.HPq@cluster0.lpqmaad.mongodb.net/test";
+require('dotenv').config();
+
+let uri = process.env.MONGO_URL;
+console.log(process.env.MONGO_URL)
 const mongoose = require("mongoose");
 function connectMongoDB(){
     mongoose.connect(uri, () => {
